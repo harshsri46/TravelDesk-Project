@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <link rel="stylesheet" href="./admin-page.component.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-title">Admin Dashboard</div>
+        <div class="navbar-login">
+            <button onclick="location.href='login.html'">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Admin Home Page</h1>
+        <div class="card" onclick="location.href='addUser.html'">
+            <h2>Add User</h2>
+        </div>
+        <div class="card" onclick="location.href='editUser.html'">
+            <h2>Edit User</h2>
+        </div>
+        <div class="card" onclick="location.href='deleteUser.html'">
+            <h2>Delete User</h2>
+        </div>
+        <div class="card" onclick="location.href='assignRole.html'">
+            <h2>Assign Role</h2>
+        </div>
+        <div class="card">
+            <h2>Total Users</h2>
+            <p id="totalUsers">0</p>
+        </div>
+    </div>
+    <script>
+        // Example JavaScript to update total users count
+        document.getElementById('totalUsers').textContent = 100; // Example count, replace with actual count
+    </script>
+</body>
+</html>

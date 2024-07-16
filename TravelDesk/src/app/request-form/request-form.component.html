@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function handleBookingTypeChange() {
+            const bookingType = document.getElementById('bookingType').value;
+            document.getElementById('airTicketOnly').classList.add('hidden');
+            document.getElementById('hotelOnly').classList.add('hidden');
+            document.getElementById('both').classList.add('hidden');
+
+            if (bookingType === 'airTicketOnly') {
+                document.getElementById('airTicketOnly').classList.remove('hidden');
+            } else if (bookingType === 'hotelOnly') {
+                document.getElementById('hotelOnly').classList.remove('hidden');
+            } else if (bookingType === 'both') {
+                document.getElementById('both').classList.remove('hidden');
+            }
+        }
+
+        function handleFlightTypeChange(sectionId) {
+            const flightType = document.getElementById(sectionId + '-flightType').value;
+            document.getElementById(sectionId + '-domesticFlight').classList.add('hidden');
+            document.getElementById(sectionId + '-internationalFlight').classList.add('hidden');
+
+            if (flightType === 'domestic') {
+                document.getElementById(sectionId + '-domesticFlight').classList.remove('hidden');
+            } else if (flightType === 'international') {
+                document.getElementById(sectionId + '-internationalFlight').classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Travel Booking Form</h2>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label for="employeeId">Employee ID</label>
+                <input type="text" id="employeeId" name="employeeId" required>
+            </div>
+            <div class="input-group">
+                <label for="employeeName">Employee Name</label>
+                <input type="text" id="employeeName" name="employeeName" required>
+            </div>
+            <div class="input-group">
+                <label for="projectName">Project Name</label>
+                <input type="text" id="projectName" name="projectName" required>
+            </div>
+            <div class="input-group">
+                <label for="departmentName">Department Name</label>
+                <input type="text" id="departmentName" name="departmentName" required>
+            </div>
+            <div class="input-group">
+                <label for="reasonForTravel">Reason for Travelling</label>
+                <input type="text" id="reasonForTravel" name="reasonForTravel" required>
+            </div>
+            <div class="input-group">
+                <label for="bookingType">Type of Booking</label>
+                <select id="bookingType" name="bookingType" onchange="handleBookingTypeChange()" required>
+                    <option value="">Select</option>
+                    <option value="airTicketOnly">Air Ticket Only</option>
+                    <option value="hotelOnly">Hotel Only</option>
+                    <option value="both">Air Ticket + Hotel Both</option>
+                </select>
+            </div>
+
+            <!-- Air Ticket Only Section -->
+            <div id="airTicketOnly" class="hidden">
+                <div class="input-group">
+                    <label for="airTicketOnly-flightType">Flight Type</label>
+                    <select id="airTicketOnly-flightType" name="flightType" onchange="handleFlightTypeChange('airTicketOnly')">
+                        <option value="">Select</option>
+                        <option value="domestic">Domestic Flight</option>
+                        <option value="international">International Flight</option>
+                    </select>
+                </div>
+                <div id="airTicketOnly-domesticFlight" class="hidden">
+                    <div class="input-group">
+                        <label for="airTicketOnly-aadharCard">Aadhar Card</label>
+                        <input type="text" id="airTicketOnly-aadharCard" name="aadharCard">
+                    </div>
+                    <div class="input-group">
+                        <label for="airTicketOnly-date">Date</label>
+                        <input type="date" id="airTicketOnly-date" name="date">
+                    </div>
+                </div>
+                <div id="airTicketOnly-internationalFlight" class="hidden">
+                    <div class="input-group">
+                        <label for="airTicketOnly-passportNumber">Passport Number</label>
+                        <input type="text" id="airTicketOnly-passportNumber" name="passportNumber">
+                    </div>
+                    <div class="input-group">
+                        <label for="airTicketOnly-passportFile">Upload Passport File</label>
+                        <input type="file" id="airTicketOnly-passportFile" name="passportFile">
+                    </div>
+                    <div class="input-group">
+                        <label for="airTicketOnly-visaFile">Upload Visa File</label>
+                        <input type="file" id="airTicketOnly-visaFile" name="visaFile">
+                    </div>
+                    <div class="input-group">
+                        <label for="airTicketOnly-intlDate">Date</label>
+                        <input type="date" id="airTicketOnly-intlDate" name="intlDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="airTicketOnly-intlAadharCard">Aadhar Card</label>
+                        <input type="text" id="airTicketOnly-intlAadharCard" name="intlAadharCard">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Only Section -->
+            <div id="hotelOnly" class="hidden">
+                <div class="input-group">
+                    <label for="hotelOnly-date">Date</label>
+                    <input type="date" id="hotelOnly-date" name="hotelDate">
+                </div>
+                <div class="input-group">
+                    <label for="hotelOnly-daysOfStay">Days of Stay</label>
+                    <input type="number" id="hotelOnly-daysOfStay" name="daysOfStay">
+                </div>
+                <div class="input-group">
+                    <label for="hotelOnly-mealRequired">Meal Required</label>
+                    <select id="hotelOnly-mealRequired" name="mealRequired">
+                        <option value="">Select</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="hotelOnly-mealPreference">Meal Preference</label>
+                    <select id="hotelOnly-mealPreference" name="mealPreference">
+                        <option value="">Select</option>
+                        <option value="veg">Veg</option>
+                        <option value="nonVeg">Non-Veg</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Both Air Ticket + Hotel Section -->
+            <div id="both" class="hidden">
+                <div class="input-group">
+                    <label for="both-flightType">Flight Type</label>
+                    <select id="both-flightType" name="flightType" onchange="handleFlightTypeChange('both')">
+                        <option value="">Select</option>
+                        <option value="domestic">Domestic Flight</option>
+                        <option value="international">International Flight</option>
+                    </select>
+                </div>
+                <div id="both-domesticFlight" class="hidden">
+                    <div class="input-group">
+                        <label for="both-aadharCard">Aadhar Card</label>
+                        <input type="text" id="both-aadharCard" name="aadharCard">
+                    </div>
+                    <div class="input-group">
+                        <label for="both-date">Date</label>
+                        <input type="date" id="both-date" name="date">
+                    </div>
+                </div>
+                <div id="both-internationalFlight" class="hidden">
+                    <div class="input-group">
+                        <label for="both-passportNumber">Passport Number</label>
+                        <input type="text" id="both-passportNumber" name="passportNumber">
+                    </div>
+                    <div class="input-group">
+                        <label for="both-passportFile">Upload Passport File</label>
+                        <input type="file" id="both-passportFile" name="passportFile">
+                    </div>
+                    <div class="input-group">
+                        <label for="both-visaFile">Upload Visa File</label>
+                        <input type="file" id="both-visaFile" name="visaFile">
+                    </div>
+                    <div class="input-group">
+                        <label for="both-intlDate">Date</label>
+                        <input type="date" id="both-intlDate" name="intlDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="both-intlAadharCard">Aadhar Card</label>
+                        <input type="text" id="both-intlAadharCard" name="intlAadharCard">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="both-daysOfStay">Days of Stay</label>
+                    <input type="number" id="both-daysOfStay" name="daysOfStay">
+                </div>
+                <div class="input-group">
+                    <label for="both-mealRequired">Meal Required</label>
+                    <select id="both-mealRequired" name="mealRequired">
+                        <option value="">Select</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="both-mealPreference">Meal Preference</label>
+                    <select id="both-mealPreference" name="mealPreference">
+                        <option value="">Select</option>
+                        <option value="veg">Veg</option>
+                        <option value="nonVeg">Non-Veg</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
