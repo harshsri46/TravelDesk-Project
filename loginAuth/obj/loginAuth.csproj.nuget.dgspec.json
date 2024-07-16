@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TravelDesk Project\\loginAuth\\loginAuth.csproj": {}
+    "C:\\TravelDesk Project\\loginauth\\loginAuth.csproj": {}
   },
   "projects": {
-    "C:\\TravelDesk Project\\loginAuth\\loginAuth.csproj": {
+    "C:\\TravelDesk Project\\loginauth\\loginAuth.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TravelDesk Project\\loginAuth\\loginAuth.csproj",
+        "projectUniqueName": "C:\\TravelDesk Project\\loginauth\\loginAuth.csproj",
         "projectName": "loginAuth",
-        "projectPath": "C:\\TravelDesk Project\\loginAuth\\loginAuth.csproj",
+        "projectPath": "C:\\TravelDesk Project\\loginauth\\loginAuth.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\TravelDesk Project\\loginAuth\\obj\\",
         "projectStyle": "PackageReference",

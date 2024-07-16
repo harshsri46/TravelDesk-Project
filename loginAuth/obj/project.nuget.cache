@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hFgQxPMrM+I=",
+  "dgSpecHash": "BNToSLaPvgE=",
   "success": true,
-  "projectFilePath": "C:\\TravelDesk Project\\loginAuth\\loginAuth.csproj",
+  "projectFilePath": "C:\\TravelDesk Project\\loginauth\\loginAuth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.7\\microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.7\\microsoft.data.sqlite.core.8.0.7.nupkg.sha512",
